@@ -41,6 +41,8 @@ for i in ${lignes[@]}; do
     echo "Création de l'utilisateur ${champs[0]}"
     # creer le nouvel utilisateur
     useradd -m -p ${champs[1]} ${champs[0]}
+    # passer le mot de passe en état expiré
+    passwd -e ${champs[0]}
     # rajouter un commentaire dans le fichier /etc/passwd
     echo "# ${champs[0]}:${champs[1]}:${champs[2]}:${champs[3]}" >> /etc/passwd
 done
