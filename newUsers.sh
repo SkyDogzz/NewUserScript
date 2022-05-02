@@ -31,6 +31,14 @@ for i in ${lignes[@]}; do
         echo "Erreur: l'utilisateur ${champs[0]} existe déjà"
         exit 1
     fi
+    # verifier si le champs 4 contient un mot de passe valable
+    # si non, afficher un message d'erreur
+    if ! echo ${champs[3]} | grep -q "^[a-zA-Z0-9]\{8,\}$"; then
+        echo "Erreur: le mot de passe \"${champs[3]}\" n'est pas valide"
+        echo "Le mot de passe doit contenir au moins 8 caractères"
+        echo "et doit contenir des lettres et des chiffres"
+        exit 1
+    fi
 done
 
 for i in ${lignes[@]}; do
