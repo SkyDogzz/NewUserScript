@@ -13,11 +13,13 @@ for i in ${users[@]}; do
     # si champs 0 == root
     if [ ${champs[0]} == "root" ]; then
         taille=$(du -sh /root | cut -f1)
+        tailleRaw=$(du -s /root | cut -f1)
     else
         taille=$(du -sh /home/${champs[0]} | cut -f1)
+        tailleRaw=$(du -s /home/${champs[0]} | cut -f1)
     fi
     #remplir la case 1 du tableau
-    users[$j]="${champs[0]}:${taille}o"
+    users[$j]="${champs[0]}:${taille}o:${tailleRaw}"
     j=$(($j+1))
 done
 
