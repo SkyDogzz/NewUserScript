@@ -11,7 +11,7 @@
 
 [x] - Les utilisateurs ne doivent pas pouvoir être créer plusieurs fois.
 
-[ ] - Créer un script qui calcule la taille des répertoires personnels de tout les utilisateurs humains du système.
+[x] - Créer un script qui calcule la taille des répertoires personnels de tout les utilisateurs humains du système.
 
 [ ] - A la connexion, chaque utilisateur verra aparaître la liste des 5 plus gros consomateurs d'espace dans l'ordre décroissant.
 
