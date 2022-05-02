@@ -1,7 +1,7 @@
 # Projet d'Administration Linux
 ## Scripts et personnalisation
 
-[ ] - Créer un script permettant de créer automatiquement des utilisateurs utilisables depuis un fichier source dont chaque ligne aura la la structure suivante: Login:prénom:nom:motdepasse.
+[x] - Créer un script permettant de créer automatiquement des utilisateurs utilisables depuis un fichier source dont chaque ligne aura la la structure suivante: Login:prénom:nom:motdepasse.
 
 [ ] - Dans le champ commentaire de /etc/passwd, chaque nouveau utilisateur devra avoir son prénom suivi de son nom.
 
