@@ -5,7 +5,7 @@
 
 [x] - Dans le champ commentaire de /etc/passwd, chaque nouveau utilisateur devra avoir son prénom suivi de son nom.
 
-[ ] - L'utilisateur doit être obliger de changer sont mot de passe lors de la première connexion.
+[x] - L'utilisateur doit être obliger de changer sont mot de passe lors de la première connexion.
 
 [ ] - A la création de leurs comptes leurs répertoires devra être peuplés de 5 à 10 fichier d'un taille aléatoires entre 5Mo et 50Mo.
 
