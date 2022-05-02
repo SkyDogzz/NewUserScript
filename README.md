@@ -3,7 +3,7 @@
 
 [x] - Créer un script permettant de créer automatiquement des utilisateurs utilisables depuis un fichier source dont chaque ligne aura la la structure suivante: Login:prénom:nom:motdepasse.
 
-[ ] - Dans le champ commentaire de /etc/passwd, chaque nouveau utilisateur devra avoir son prénom suivi de son nom.
+[x] - Dans le champ commentaire de /etc/passwd, chaque nouveau utilisateur devra avoir son prénom suivi de son nom.
 
 [ ] - L'utilisateur doit être obliger de changer sont mot de passe lors de la première connexion.
 
