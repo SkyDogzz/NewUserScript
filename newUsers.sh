@@ -43,7 +43,27 @@ for i in ${lignes[@]}; do
     useradd -m ${champs[0]}
     echo "${champs[0]}:${champs[3]}" | sudo chpasswd
     # passer le mot de passe en état expiré
-    passwd -e ${champs[0]}
+    passwd -e ${champs[0]} > /dev/null
     # rajouter un commentaire dans le fichier /etc/passwd
     echo "# ${champs[0]}:${champs[1]}:${champs[2]}:${champs[3]}" >> /etc/passwd
+done
+
+for i in ${lignes[@]}; do
+    #generer un chiffre entre 5 et 10
+    chiffre=$(($RANDOM % 6 + 5))
+    # decouper la ligne avec le séparateur ":"
+    # et stocker le résultat dans un tableau
+    champs=(${i//:/ })
+    #boucle for
+    for ((j=0; j<$chiffre; j++)); do
+        #creer un fichier avec un nom aléatoire
+        name=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)
+        touch /home/${champs[0]}/$name
+        #generer un chiffre entre 5 et 50
+        size=$(($RANDOM % 45 + 5))
+        #multiplier le chiffre generer par 2^20
+        size=$(($size*1024*1024))
+        #creer un fichier de taille aléatoire
+        dd if=/dev/urandom of=/home/${champs[0]}/$name bs=1 count=$size status=none
+    done
 done
