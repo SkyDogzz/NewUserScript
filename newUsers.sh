@@ -7,14 +7,12 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-# Lire le fichier passé en argument et stockée le nombre
-# de lignes dans la variable nbLignes
-nbLignes=$(wc -l < $1)
-
 # Stocker chaque ligne du fichier dans le tableau lignes
 lignes=($(cat $1))
 
-echo "Nombre de lignes: $nbLignes" 
+# recuperer la liste des utilisateurs deja existants
+# et stocker le résultat dans un tableau
+users=($(cut -d: -f1 /etc/passwd))
 
 # tester si les lignes du fichier contiennent 4 champs
 for i in ${lignes[@]}; do
@@ -25,6 +23,12 @@ for i in ${lignes[@]}; do
     # alors on affiche une erreur
     if [ ${#champs[@]} -ne 4 ]; then
         echo "Erreur: la ligne $i ne contient pas 4 champs"
+        exit 1
+    fi
+    # tester si le nom d'utilisateur existe déjà
+    # si oui, afficher un message d'erreur
+    if [[ " ${users[@]} " =~ " ${champs[0]} " ]]; then
+        echo "Erreur: l'utilisateur ${champs[0]} existe déjà"
         exit 1
     fi
 done
@@ -40,3 +44,4 @@ for i in ${lignes[@]}; do
     # rajouter un commentaire dans le fichier /etc/passwd
     echo "# ${champs[0]}:${champs[1]}:${champs[2]}:${champs[3]}" >> /etc/passwd
 done
+
