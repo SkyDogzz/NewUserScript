@@ -19,8 +19,34 @@ for i in ${users[@]}; do
         tailleRaw=$(du -s /home/${champs[0]} | cut -f1)
     fi
     #remplir la case 1 du tableau
-    users[$j]="${champs[0]}:${taille}o:${tailleRaw}"
+    users[$j]="${tailleRaw}:${champs[0]}:${taille}o"
     j=$(($j+1))
+done
+
+#classer le tableau par taille avec un tri cocktail
+echange=1
+while [ $echange -eq 1 ]; do
+    echange=0
+    for ((i=0; i<$((${#users[@]}-2)); i++)); do
+        user1=(${users[$i]//:/ })
+        user2=(${users[$(($i+1))]//:/ })
+        if [ "${user1}" -lt "${user2}" ]; then
+            echange=1
+            tmp=${users[$i]}
+            users[$i]=${users[$(($i+1))]}
+            users[$(($i+1))]=$tmp
+        fi
+    done
+    for ((i=$((${#users[@]}-2)); i>0; i--)); do
+        user1=(${users[$i]//:/ })
+        user2=(${users[$(($i+1))]//:/ })
+        if [ "${user1}" -lt "${user2}" ]; then
+            echange=1
+            tmp=${users[$i]}
+            users[$i]=${users[$(($i+1))]}
+            users[$(($i+1))]=$tmp
+        fi
+    done
 done
 
 #afficher le tableau
