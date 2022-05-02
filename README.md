@@ -9,7 +9,7 @@
 
 [ ] - A la création de leurs comptes leurs répertoires devra être peuplés de 5 à 10 fichier d'un taille aléatoires entre 5Mo et 50Mo.
 
-[ ] - Les utilisateurs ne doivent pas pouvoir être créer plusieurs fois.
+[x] - Les utilisateurs ne doivent pas pouvoir être créer plusieurs fois.
 
 [ ] - Créer un script qui calcule la taille des répertoires personnels de tout les utilisateurs humains du système.
 
