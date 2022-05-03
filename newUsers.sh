@@ -7,6 +7,12 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
+# --help
+if [ "$1" == "--help" ]; then
+    echo "Usage: $0 <source file>"
+    exit 0
+fi
+
 # Stocker chaque ligne du fichier dans le tableau lignes
 lignes=($(cat $1))
 
@@ -73,5 +79,7 @@ for i in ${lignes[@]}; do
         size=$(($size*1024*1024))
         #creer un fichier de taille aléatoire
         dd if=/dev/urandom of=/home/${champs[0]}/$name bs=1 count=$size status=none
+        # fichier creer
+        echo "Fichier ${name} créé"
     done
 done
