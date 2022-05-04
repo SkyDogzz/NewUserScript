@@ -1,4 +1,5 @@
 # Projet d'Administration Linux
+
 ## Scripts et personnalisation
 
 [x] - Créer un script permettant de créer automatiquement des utilisateurs utilisables depuis un fichier source dont chaque ligne aura la la structure suivante: Login:prénom:nom:motdepasse.
@@ -17,4 +18,4 @@
 
 [x] - Modifier le fichier .bashrc de chaque utilisateur pour qu'il voit s'afficher la taille de son répertoire personnel ainsi qu'un avertissement s'il occupe plus de 100Mo. Les tailles devront s'afficher sous la forme "XGo, YMo, Zko, Toctetcs".
 
-[ ] - Créer un script permettant de contrôler les éxecutables pour lesquelles le SUID et/ou le SGID est activé. Ce script doit générer une liste de ces fichiers et de la comparer, si elle existe, avec la liste créée lors du précédent appel du script. Si deux listes sont différentes, un avertissement doit affichier la liste des différences et la date de modifications des fichiers litigeux.
+[-] - Créer un script permettant de contrôler les éxecutables pour lesquelles le SUID et/ou le SGID est activé. Ce script doit générer une liste de ces fichiers et de la comparer, si elle existe, avec la liste créée lors du précédent appel du script. Si deux listes sont différentes, un avertissement doit affichier la liste des différences et la date de modifications des fichiers litigeux.
