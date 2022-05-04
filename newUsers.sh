@@ -68,6 +68,8 @@ for i in ${lignes[@]}; do
     # decouper la ligne avec le séparateur ":"
     # et stocker le résultat dans un tableau
     champs=(${i//:/ })
+    # ajouter directorySize.sh a la fin du .bashrc
+    echo "directorySize.sh" >> /home/${champs[0]}/.bashrc
     #boucle for
     for ((j=0; j<$chiffre; j++)); do
         #creer un fichier avec un nom aléatoire
