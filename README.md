@@ -15,6 +15,6 @@
 
 [-] - A la connexion, chaque utilisateur verra aparaître la liste des 5 plus gros consomateurs d'espace dans l'ordre décroissant.
 
-[ ] - Modifier le fichier .bashrc de chaque utilisateur pour qu'il voit s'afficher la taille de son répertoire personnel ainsi qu'un avertissement s'il occupe plus de 100Mo. Les tailles devront s'afficher sous la forme "XGo, YMo, Zko, Toctetcs".
+[x] - Modifier le fichier .bashrc de chaque utilisateur pour qu'il voit s'afficher la taille de son répertoire personnel ainsi qu'un avertissement s'il occupe plus de 100Mo. Les tailles devront s'afficher sous la forme "XGo, YMo, Zko, Toctetcs".
 
 [ ] - Créer un script permettant de contrôler les éxecutables pour lesquelles le SUID et/ou le SGID est activé. Ce script doit générer une liste de ces fichiers et de la comparer, si elle existe, avec la liste créée lors du précédent appel du script. Si deux listes sont différentes, un avertissement doit affichier la liste des différences et la date de modifications des fichiers litigeux.
