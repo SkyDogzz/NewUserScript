@@ -13,7 +13,7 @@
 
 [x] - Créer un script qui calcule la taille des répertoires personnels de tout les utilisateurs humains du système.
 
-[ ] - A la connexion, chaque utilisateur verra aparaître la liste des 5 plus gros consomateurs d'espace dans l'ordre décroissant.
+[-] - A la connexion, chaque utilisateur verra aparaître la liste des 5 plus gros consomateurs d'espace dans l'ordre décroissant.
 
 [ ] - Modifier le fichier .bashrc de chaque utilisateur pour qu'il voit s'afficher la taille de son répertoire personnel ainsi qu'un avertissement s'il occupe plus de 100Mo. Les tailles devront s'afficher sous la forme "XGo, YMo, Zko, Toctetcs".
 
